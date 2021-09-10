@@ -5,29 +5,29 @@
 class Ah < Formula
   desc "Artifact Hub command line tool"
   homepage "https://github.com/artifacthub/hub"
-  version "1.1.1"
+  version "1.2.0"
   license "Apache-2.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.1.1/ah_1.1.1_macos_amd64.tar.gz"
-      sha256 "6101b286b4c92193da512d9c5c91ed8d9e30e01e04f9ded068819b6970a403f2"
+      url "https://github.com/artifacthub/hub/releases/download/v1.2.0/ah_1.2.0_macos_amd64.tar.gz"
+      sha256 "119fb683ae9f5d2747f0c7083ea74f0b88876bbafb44a19e83252dbcabca5be9"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/artifacthub/hub/releases/download/v1.1.1/ah_1.1.1_macos_arm64.tar.gz"
-      sha256 "0313b06f840fe562bf96b3a7225e2b163a88ff764112aafd807b07baa7ec6ee0"
+      url "https://github.com/artifacthub/hub/releases/download/v1.2.0/ah_1.2.0_macos_arm64.tar.gz"
+      sha256 "aad7910628395ec4952b80daa68cd084408605e9e5e162bbf7c0ad042b15c51d"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.1.1/ah_1.1.1_linux_amd64.tar.gz"
-      sha256 "84e818cd0a67b0e4422827d6fc049b46932e50dbe05ba8c934ce8445d58c650f"
+      url "https://github.com/artifacthub/hub/releases/download/v1.2.0/ah_1.2.0_linux_amd64.tar.gz"
+      sha256 "30d3b080c5e65530d6089813233f10a881820361e2b9b32fb7b744466ff74d27"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/artifacthub/hub/releases/download/v1.1.1/ah_1.1.1_linux_arm64.tar.gz"
-      sha256 "ac9910dfc2103704d6c9609250230bf6c55615e51d5a94d642cd04223164b4aa"
+      url "https://github.com/artifacthub/hub/releases/download/v1.2.0/ah_1.2.0_linux_arm64.tar.gz"
+      sha256 "fb5a23899411ff68d4ccab7746c0e2220102d1fb1fd0f7cc5ad4dbd24305b7f7"
     end
   end
 
