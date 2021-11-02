@@ -5,33 +5,44 @@
 class Ah < Formula
   desc "Artifact Hub command line tool"
   homepage "https://github.com/artifacthub/hub"
-  version "1.3.0"
+  version "1.4.0"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.3.0/ah_1.3.0_macos_amd64.tar.gz"
-      sha256 "3f927d500b7b4c22ad563e3f05c28709696bf4035c0cb50c23b3f5d5532d846f"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/artifacthub/hub/releases/download/v1.3.0/ah_1.3.0_macos_arm64.tar.gz"
-      sha256 "28fe7fd84e5696bc88bcf54498a299736a451246b9eef7de54c7f12773c6d7f8"
+      url "https://github.com/artifacthub/hub/releases/download/v1.4.0/ah_1.4.0_macos_arm64.tar.gz"
+      sha256 "c6472aaad918411207845faa4e9db1901f393038e98256803ca104da768ccc4f"
+
+      def install
+        bin.install "ah"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/artifacthub/hub/releases/download/v1.4.0/ah_1.4.0_macos_amd64.tar.gz"
+      sha256 "3d4904fddacbd878e1896f5126b5ecc654ecdda6cfa346825f39c2e0d5a4b048"
+
+      def install
+        bin.install "ah"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.3.0/ah_1.3.0_linux_amd64.tar.gz"
-      sha256 "9b610cbbb68114d29f82d58c365741430ae127a64ccc3720077ded971f5007ee"
+      url "https://github.com/artifacthub/hub/releases/download/v1.4.0/ah_1.4.0_linux_amd64.tar.gz"
+      sha256 "a318c1c8d8dcb880f1bc76610ada399fbefeb7b90987c90e07cabf3a4273f9cd"
+
+      def install
+        bin.install "ah"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/artifacthub/hub/releases/download/v1.3.0/ah_1.3.0_linux_arm64.tar.gz"
-      sha256 "9285f8ad32977e90de9380aca6c7983a72a09467e47b2b78cbaa00bbdf2ea6d6"
-    end
-  end
+      url "https://github.com/artifacthub/hub/releases/download/v1.4.0/ah_1.4.0_linux_arm64.tar.gz"
+      sha256 "05cdbaed9e48c01bb52b8e905f8a5f082e44c296f0f85c939ca6e6439836b717"
 
-  def install
-    bin.install "ah"
+      def install
+        bin.install "ah"
+      end
+    end
   end
 end
