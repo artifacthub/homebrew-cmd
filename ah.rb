@@ -5,21 +5,21 @@
 class Ah < Formula
   desc "Artifact Hub command line tool"
   homepage "https://github.com/artifacthub/hub"
-  version "1.7.0"
+  version "1.8.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/artifacthub/hub/releases/download/v1.7.0/ah_1.7.0_macos_arm64.tar.gz"
-      sha256 "33b51d4dcef42d0a4f571143a5a9e70cfc012a267b1572c34cdf3754615637de"
+    if Hardware::CPU.intel?
+      url "https://github.com/artifacthub/hub/releases/download/v1.8.0/ah_1.8.0_macos_amd64.tar.gz"
+      sha256 "0b3a2b1cab29b14a81c7d8e21c38e5d4b23284fd57b5b8c564866d604cd41f6e"
 
       def install
         bin.install "ah"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.7.0/ah_1.7.0_macos_amd64.tar.gz"
-      sha256 "7d5569e69b91e8efcc9217bd4895a929235ee826da8da548cfe0300f3a6f6057"
+    if Hardware::CPU.arm?
+      url "https://github.com/artifacthub/hub/releases/download/v1.8.0/ah_1.8.0_macos_arm64.tar.gz"
+      sha256 "57902d79439b352791078d1a75d8930bfdaee12a1f70a6018e15e0fac4df24c6"
 
       def install
         bin.install "ah"
@@ -28,17 +28,17 @@ class Ah < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.7.0/ah_1.7.0_linux_amd64.tar.gz"
-      sha256 "50ac6a5b59ed34bc898e82abbe360554f9d0757d0dd9463d529b9aa6392096f2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/artifacthub/hub/releases/download/v1.8.0/ah_1.8.0_linux_arm64.tar.gz"
+      sha256 "3898933d3d442f685e87c21f88e6264a08cdcfb51e9f2c4ad48cf3afee89b891"
 
       def install
         bin.install "ah"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/artifacthub/hub/releases/download/v1.7.0/ah_1.7.0_linux_arm64.tar.gz"
-      sha256 "9188b514ed78b131669fed2fbcce5b81eda43bda242516e399a1aafdcaea4089"
+    if Hardware::CPU.intel?
+      url "https://github.com/artifacthub/hub/releases/download/v1.8.0/ah_1.8.0_linux_amd64.tar.gz"
+      sha256 "25f8374a19098428f91d0d7e4626ef2d216f08c42d4c41fb523519b054b13223"
 
       def install
         bin.install "ah"
