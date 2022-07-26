@@ -5,21 +5,21 @@
 class Ah < Formula
   desc "Artifact Hub command line tool"
   homepage "https://github.com/artifacthub/hub"
-  version "1.8.0"
+  version "1.9.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.8.0/ah_1.8.0_macos_amd64.tar.gz"
-      sha256 "0b3a2b1cab29b14a81c7d8e21c38e5d4b23284fd57b5b8c564866d604cd41f6e"
+      url "https://github.com/artifacthub/hub/releases/download/v1.9.0/ah_1.9.0_macos_amd64.tar.gz"
+      sha256 "c28efcf3bde1ac87c739db8940be52d36d1e45fb6ebff63ed708a2e92bba66bf"
 
       def install
         bin.install "ah"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/artifacthub/hub/releases/download/v1.8.0/ah_1.8.0_macos_arm64.tar.gz"
-      sha256 "57902d79439b352791078d1a75d8930bfdaee12a1f70a6018e15e0fac4df24c6"
+      url "https://github.com/artifacthub/hub/releases/download/v1.9.0/ah_1.9.0_macos_arm64.tar.gz"
+      sha256 "0b11b4fe717bd1b8ff19a486ddd1b5ae7dace23b9aa3a863df0742e5269454be"
 
       def install
         bin.install "ah"
@@ -29,16 +29,16 @@ class Ah < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/artifacthub/hub/releases/download/v1.8.0/ah_1.8.0_linux_arm64.tar.gz"
-      sha256 "3898933d3d442f685e87c21f88e6264a08cdcfb51e9f2c4ad48cf3afee89b891"
+      url "https://github.com/artifacthub/hub/releases/download/v1.9.0/ah_1.9.0_linux_arm64.tar.gz"
+      sha256 "80eb2e3ef95536290dff6f5184880954bbbb4e771662d339910ba28150877396"
 
       def install
         bin.install "ah"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.8.0/ah_1.8.0_linux_amd64.tar.gz"
-      sha256 "25f8374a19098428f91d0d7e4626ef2d216f08c42d4c41fb523519b054b13223"
+      url "https://github.com/artifacthub/hub/releases/download/v1.9.0/ah_1.9.0_linux_amd64.tar.gz"
+      sha256 "239bf2e05411b3cc97831f3dd01f987b4d086bbfa1d836170916429380c5d283"
 
       def install
         bin.install "ah"
