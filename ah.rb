@@ -5,21 +5,21 @@
 class Ah < Formula
   desc "Artifact Hub command line tool"
   homepage "https://github.com/artifacthub/hub"
-  version "1.16.0"
+  version "1.17.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/artifacthub/hub/releases/download/v1.16.0/ah_1.16.0_macos_arm64.tar.gz"
-      sha256 "fdcb9b597d240bae28fabd9a780ef8a39fa36560c9b1762ac6faf59729e029e1"
+    if Hardware::CPU.intel?
+      url "https://github.com/artifacthub/hub/releases/download/v1.17.0/ah_1.17.0_macos_amd64.tar.gz"
+      sha256 "1dc998726a212c55d9adb761f01b825442c57adaab3585b742db3057394e81f4"
 
       def install
         bin.install "ah"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.16.0/ah_1.16.0_macos_amd64.tar.gz"
-      sha256 "78f4b0ada105d43afad32f380137ea0851b69ce6b55370ad435910ecb6f23c31"
+    if Hardware::CPU.arm?
+      url "https://github.com/artifacthub/hub/releases/download/v1.17.0/ah_1.17.0_macos_arm64.tar.gz"
+      sha256 "15006aa10a07e58fd18bcf5fdd60af789f7e85bc4f8ed85b5a7e4b9b92c02243"
 
       def install
         bin.install "ah"
@@ -29,16 +29,16 @@ class Ah < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/artifacthub/hub/releases/download/v1.16.0/ah_1.16.0_linux_arm64.tar.gz"
-      sha256 "83cc902544e1fa147a88abe514417f573637ab21411467886797b8d960e2d8c3"
+      url "https://github.com/artifacthub/hub/releases/download/v1.17.0/ah_1.17.0_linux_arm64.tar.gz"
+      sha256 "ec7cfca9e45fe8612e6158e2981153c8d991e3ec5324837440c20c3ff3fcc766"
 
       def install
         bin.install "ah"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.16.0/ah_1.16.0_linux_amd64.tar.gz"
-      sha256 "d5955b409361922f609c261bf4b124c4d8ecd294cf85e5fee11c2ba774d45366"
+      url "https://github.com/artifacthub/hub/releases/download/v1.17.0/ah_1.17.0_linux_amd64.tar.gz"
+      sha256 "57c184b71a9a5c59192c2158fc08bdddca5c340fb1deeed0158383a665b38bf1"
 
       def install
         bin.install "ah"
