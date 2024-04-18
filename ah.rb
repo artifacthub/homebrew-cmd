@@ -5,21 +5,21 @@
 class Ah < Formula
   desc "Artifact Hub command line tool"
   homepage "https://github.com/artifacthub/hub"
-  version "1.17.0"
+  version "1.18.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.17.0/ah_1.17.0_macos_amd64.tar.gz"
-      sha256 "1dc998726a212c55d9adb761f01b825442c57adaab3585b742db3057394e81f4"
+      url "https://github.com/artifacthub/hub/releases/download/v1.18.0/ah_1.18.0_macos_amd64.tar.gz"
+      sha256 "3c58dc3ca8b245407cd726d4db42a7831eed35f0004a7c529eac00fe13e70045"
 
       def install
         bin.install "ah"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/artifacthub/hub/releases/download/v1.17.0/ah_1.17.0_macos_arm64.tar.gz"
-      sha256 "15006aa10a07e58fd18bcf5fdd60af789f7e85bc4f8ed85b5a7e4b9b92c02243"
+      url "https://github.com/artifacthub/hub/releases/download/v1.18.0/ah_1.18.0_macos_arm64.tar.gz"
+      sha256 "66be91cce6621d33599bb3ea4d389df83ef0bd5248cfb04f079575edd7fe47a8"
 
       def install
         bin.install "ah"
@@ -28,17 +28,17 @@ class Ah < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/artifacthub/hub/releases/download/v1.17.0/ah_1.17.0_linux_arm64.tar.gz"
-      sha256 "ec7cfca9e45fe8612e6158e2981153c8d991e3ec5324837440c20c3ff3fcc766"
+    if Hardware::CPU.intel?
+      url "https://github.com/artifacthub/hub/releases/download/v1.18.0/ah_1.18.0_linux_amd64.tar.gz"
+      sha256 "05783b323246fb38d475bd958f1237f737c7d189f3dbba57dfc80005b9f72731"
 
       def install
         bin.install "ah"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.17.0/ah_1.17.0_linux_amd64.tar.gz"
-      sha256 "57c184b71a9a5c59192c2158fc08bdddca5c340fb1deeed0158383a665b38bf1"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/artifacthub/hub/releases/download/v1.18.0/ah_1.18.0_linux_arm64.tar.gz"
+      sha256 "1ecb69918488af11d9b1586f1ecaa6415224f152475d5564880eaea0ecf18536"
 
       def install
         bin.install "ah"
