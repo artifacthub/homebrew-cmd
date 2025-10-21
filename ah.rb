@@ -5,21 +5,21 @@
 class Ah < Formula
   desc "Artifact Hub command line tool"
   homepage "https://github.com/artifacthub/hub"
-  version "1.21.0"
+  version "1.22.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/artifacthub/hub/releases/download/v1.21.0/ah_1.21.0_macos_amd64.tar.gz"
-      sha256 "c34873b98390a639271921e6ffd753b2cb78ddfb20372a17d980726b48a5f8b4"
+      url "https://github.com/artifacthub/hub/releases/download/v1.22.0/ah_1.22.0_macos_amd64.tar.gz"
+      sha256 "f64b9da38544a20d2469484ecadd45af787cd9d1e262d18f8669494407a090c2"
 
       def install
         bin.install "ah"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/artifacthub/hub/releases/download/v1.21.0/ah_1.21.0_macos_arm64.tar.gz"
-      sha256 "2f831571b1343a3d07656fa950f9d20d671e4428740656e32334734be32612e8"
+      url "https://github.com/artifacthub/hub/releases/download/v1.22.0/ah_1.22.0_macos_arm64.tar.gz"
+      sha256 "7f36906d71d46706916b712462c082b4ace2245c0e15e3db805ee9d46921ced4"
 
       def install
         bin.install "ah"
@@ -28,24 +28,18 @@ class Ah < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/artifacthub/hub/releases/download/v1.21.0/ah_1.21.0_linux_amd64.tar.gz"
-        sha256 "48d6b87b60baf4ee8fd5efbfec3bf5fb3ca783ab3f1dab625e64332b95df2a84"
-
-        def install
-          bin.install "ah"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/artifacthub/hub/releases/download/v1.22.0/ah_1.22.0_linux_amd64.tar.gz"
+      sha256 "c845307d19f822905b7c47b3f216712116dd74709802c7d1d4a9b6f999d6f92a"
+      def install
+        bin.install "ah"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/artifacthub/hub/releases/download/v1.21.0/ah_1.21.0_linux_arm64.tar.gz"
-        sha256 "c592647d75dbf997bc7dd1a2dee9c7c015a2b7224bcdc0f6556927fd7f366d1c"
-
-        def install
-          bin.install "ah"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/artifacthub/hub/releases/download/v1.22.0/ah_1.22.0_linux_arm64.tar.gz"
+      sha256 "1a3bcc6fe83d6593926d6258de6f61948e03631e255d697afa8c18e0e3f69c6a"
+      def install
+        bin.install "ah"
       end
     end
   end
